@@ -40,7 +40,8 @@ function LinkTable({ links = [], loading, onRefresh, onEdit }: LinkTableProps) {
   };
 
   const handleCopy = (shortCode: string) => {
-    const url = `${window.location.origin}/api/redirect/${shortCode}`;
+    const apiBase = import.meta.env.VITE_API_URL || "https://url-shortener-dashboard-backend.onrender.com";
+    const url = `${apiBase}/redirect/${shortCode}`;
     navigator.clipboard.writeText(url);
     setCopiedId(shortCode);
     setTimeout(() => setCopiedId(null), 2000);

@@ -65,7 +65,8 @@ function Analytics() {
   }
 
   const { link, analytics } = data;
-  const shortUrl = `${window.location.origin}/api/redirect/${link.shortCode}`;
+  const apiBase = import.meta.env.VITE_API_URL || "https://url-shortener-dashboard-backend.onrender.com";
+  const shortUrl = `${apiBase}/redirect/${link.shortCode}`;
   const isExpired = link.expiresAt && new Date(link.expiresAt) < new Date();
 
   const clicksByDate = analytics.clicksByDate.map((c) => ({
