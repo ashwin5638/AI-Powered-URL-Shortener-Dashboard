@@ -228,5 +228,3 @@ Additional project documentation is available in the `docs/` folder:
 * `tradeoffs.md`
 * `prompts.md`
 
-
-If you found this project helpful, consider giving it a ⭐ on GitHub.
